@@ -189,7 +189,7 @@ function formatResult(
   return `/**
   * Words per minute: ${calculateWordsPerMinute(text, startAt, endAt)}
   * 
-  * Accuracy: ${calculateAccuracyPercentage(text, errorMap)}
+  * Accuracy: ${calculateAccuracyPercentage(text, errorMap)}%
   * 
   * Error count per character: 
   * ${Object.entries(errorMap)
