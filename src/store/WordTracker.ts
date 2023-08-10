@@ -212,7 +212,7 @@ function calculateWordsPerMinute(
 
   const differenceInMilliseconds = endAt.getTime() - startAt.getTime();
 
-  return Math.round(count / (differenceInMilliseconds / 1000 / 60) / 10) * 10;
+  return Math.round((count / (differenceInMilliseconds / 1000 / 60)) * 10) / 10;
 }
 
 function calculateAccuracyPercentage(

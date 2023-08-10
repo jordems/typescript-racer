@@ -46,18 +46,6 @@ export const TextCarousel: Component<TextCarouselProps> = (props) => {
 
   const differenceInMilliseconds = endAt.getTime() - startAt.getTime();
 
-  return Math.round(count / (differenceInMilliseconds / 1000 / 60) / 10) * 10;
-}`,
-
-  `function calculateAccuracyPercentage(
-  text: string,
-  errorMap: Record<string, number>
-): number {
-  const errorCount = Object.values(errorMap).reduce(
-    (prev, cur) => prev + cur,
-    0
-  );
-
-  return Math.round(((text.length - errorCount) / text.length) * 10000) / 100;
+  return Math.round(count / (differenceInMilliseconds / 1000 / 60) * 10) / 10;
 }`,
 ];
