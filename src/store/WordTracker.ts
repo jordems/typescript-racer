@@ -26,7 +26,7 @@ export function setupWordTrackerStore(
   >({});
   const [errorMap, setErrorMap] = createSignal<Record<string, number>>({});
 
-  const onKeyPress = (e: KeyboardEvent) => {
+  const onKeyPress = (e: Pick<KeyboardEvent, "key">) => {
     const current = after();
     const start = startAt();
     const character = current[0];
@@ -76,6 +76,14 @@ export function setupWordTrackerStore(
             language: "ts",
           }).value
         );
+      }
+    }
+
+    if (character === "\n") {
+      for (const c of current.slice(1)) {
+        if (c !== " ") break;
+
+        onKeyPress({ key: " " });
       }
     }
   };
